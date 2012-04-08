@@ -32,7 +32,8 @@ class User extends AppModel {
 			'offset' => '',
 			'exclusive' => '',
 			'finderQuery' => '',
-			'counterQuery' => ''
+			'counterQuery' => '',
+			'type' => 'inner'
 		)
 	);
 

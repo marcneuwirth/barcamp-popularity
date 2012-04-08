@@ -16,12 +16,8 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Score'), array('action' => 'edit', $score['Score']['name'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Score'), array('action' => 'delete', $score['Score']['name']), null, __('Are you sure you want to delete # %s?', $score['Score']['name'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Scores'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Score'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Tags'), array('controller' => 'tags', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Tag'), array('controller' => 'tags', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'tags', 'action' => 'rank')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Scores'), array('controller' => 'scores', 'action' => 'index')); ?> </li>
 	</ul>
 </div>
 <div class="related">
@@ -50,10 +46,4 @@
 	<?php endforeach; ?>
 	</table>
 <?php endif; ?>
-
-	<div class="actions">
-		<ul>
-			<li><?php echo $this->Html->link(__('New Tag'), array('controller' => 'tags', 'action' => 'add'));?> </li>
-		</ul>
-	</div>
 </div>

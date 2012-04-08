@@ -26,14 +26,16 @@ class Tag extends AppModel {
 			'foreignKey' => 'user_id',
 			'conditions' => '',
 			'fields' => '',
-			'order' => ''
+			'order' => '',
+			'type' => 'inner'
 		),
 		'Score' => array(
 			'className' => 'Score',
 			'foreignKey' => 'name',
 			'conditions' => '',
 			'fields' => '',
-			'order' => ''
+			'order' => '',
+			'type' => 'inner'
 		)
 	);
 }

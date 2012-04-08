@@ -32,7 +32,8 @@ class Score extends AppModel {
 			'foreignKey' => 'name',
 			'conditions' => '',
 			'fields' => '',
-			'order' => ''
+			'order' => '',
+			'type' => 'inner'
 		)
 	);
 }
