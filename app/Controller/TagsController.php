@@ -67,6 +67,21 @@ class TagsController extends AppController {
 				'User.id' => $id
 			)
 		)));
+
+		$this->set('tags', $this->Tag->find('all', array(
+			'fields' => array(
+				'Tag.name',
+				'Score.count'
+			),
+			'contain' => array(
+				'Tag' => array(
+					'Score'
+				)
+			),
+			'conditions' => array(
+				'User.id' => $id
+			)
+		)));
 	}
 
 }
