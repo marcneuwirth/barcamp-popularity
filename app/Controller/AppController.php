@@ -35,7 +35,7 @@ class AppController extends Controller {
 	function beforeFilter(){
 		$result = Cache::read('highest');
 		if (!$result) {
-			$this->loadModel('Tags');
+			$this->loadModel('Tag');
 			$result = $this->Tag->find('first', array(
 				'fields' => array(
 					'Tag.Average'
