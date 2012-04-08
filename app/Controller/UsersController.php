@@ -24,7 +24,15 @@ class UsersController extends AppController {
 				$name = $this->request->data['User']['name'];
 				$this->paginate = array(
 					'conditions' => array(
-						'User.name LIKE' => "%$name%"
+						array(
+							'OR' => array(
+								'User.name LIKE' => "%$name%",
+								'User.twitter LIKE' => "%$name%",
+								'User.affiliation LIKE' => "%$name%",
+								'User.website LIKE' => "%$name%"
+							)
+						)
+						
 					)
 				);
 			}
