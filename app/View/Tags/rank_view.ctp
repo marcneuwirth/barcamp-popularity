@@ -36,6 +36,11 @@
 			<?php echo h($user['Tag']['Sum']); ?>
 			&nbsp;
 		</dd>
+		<dt><?php echo __('Percent of Max'); ?></dt>
+		<dd>
+			<?php echo h(round($user['Tag']['Average'] / $highest['Tag']['Average'] * 100)) . '%'; ?>
+			&nbsp;
+		</dd>
 	</dl>
 </div>
 <div class="actions">

@@ -32,4 +32,28 @@ App::uses('Controller', 'Controller');
  * @link http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+	function beforeFilter(){
+		$result = Cache::read('highest');
+		if (!$result) {
+			$this->loadModel('Tags');
+			$result = $this->Tag->find('first', array(
+				'fields' => array(
+					'Tag.Average'
+				),
+				'contain' => array(
+					'Tag' => array(
+						'Score'
+					)
+				),
+				'group' => array(
+					'User.id'
+				),
+				'order' => array(
+					'Tag.Average' => 'desc',
+					'Tag.Sum' => 'desc'
+				)
+			));
+			Cache::write('highest', $result);
+		}
+	}
 }

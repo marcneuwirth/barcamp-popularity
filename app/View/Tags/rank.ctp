@@ -8,6 +8,7 @@
 			<th><?php echo $this->Paginator->sort('User.twitter', 'twitter');?></th>
 			<th><?php echo $this->Paginator->sort('Tag.Average', 'average');?></th>
 			<th><?php echo $this->Paginator->sort('Tag.Sum', 'sum');?></th>
+			<th><?php echo __('percent of max'); ?></th>
 			<th class="actions"><?php echo __('Actions');?></th>
 	</tr>
 	<?php
@@ -19,6 +20,7 @@
 		<td><?php echo $this->Html->link($user['User']['twitter'], 'http://twitter.com/' . $user['User']['twitter']); ?>&nbsp;</td>
 		<td><?php echo h($user['Tag']['Average']); ?>&nbsp;</td>
 		<td><?php echo h($user['Tag']['Sum']); ?>&nbsp;</td>
+		<td><?php echo h(round($user['Tag']['Average'] / $highest['Tag']['Average'] * 100)) . '%'; ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'rank_view', $user['User']['id'])); ?>
 		</td>
