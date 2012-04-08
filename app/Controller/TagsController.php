@@ -7,15 +7,13 @@ App::uses('AppController', 'Controller');
  */
 class TagsController extends AppController {
 
-
+	public $helpers = array('Title');
 /**
  * rank method
  *
  * @return void
  */
 	public function rank() {
-
-		$this->set('highest', Cache::read('highest'));
 		
 		$this->paginate = Set::merge($this->paginate, array(
 			'fields' => array(
@@ -50,8 +48,6 @@ class TagsController extends AppController {
  * @return void
  */
 	public function rank_view($id = null) {
-
-		$this->set('highest', Cache::read('highest'));
 
 		$this->set('user', $this->Tag->find('first', array(
 			'fields' => array(
@@ -95,8 +91,6 @@ class TagsController extends AppController {
 	 * @return void
 	 */
 		public function view($name = null) {
-
-			$this->set('highest', Cache::read('highest'));
 
 			$this->paginate = Set::merge($this->paginate, array(
 				'fields' => array(

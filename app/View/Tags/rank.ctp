@@ -8,7 +8,7 @@
 			<th><?php echo $this->Paginator->sort('User.twitter', 'twitter');?></th>
 			<th><?php echo $this->Paginator->sort('Tag.Average', 'average');?></th>
 			<th><?php echo $this->Paginator->sort('Tag.Sum', 'sum');?></th>
-			<th><?php echo __('percent of max'); ?></th>
+			<th><?php echo __('title'); ?></th>
 			<th class="actions"><?php echo __('Actions');?></th>
 	</tr>
 	<?php
@@ -20,7 +20,8 @@
 		<td><?php echo $this->Html->link($user['User']['twitter'], 'http://twitter.com/' . $user['User']['twitter']); ?>&nbsp;</td>
 		<td><?php echo h($user['Tag']['Average']); ?>&nbsp;</td>
 		<td><?php echo h($user['Tag']['Sum']); ?>&nbsp;</td>
-		<td><?php echo h(round($user['Tag']['Average'] / $highest['Tag']['Average'] * 100)) . '%'; ?>&nbsp;</td>
+		<td><?php echo h($this->Title->get($user['Tag']['Average'])); ?>&nbsp;</td>
+		
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'rank_view', $user['User']['id'])); ?>
 		</td>
@@ -45,6 +46,8 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
+		<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'tags', 'action' => 'rank')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Scores'), array('controller' => 'scores', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Search'), array('controller' => 'pages', 'action' => 'display', 'home')); ?> </li>
 	</ul>
 </div>

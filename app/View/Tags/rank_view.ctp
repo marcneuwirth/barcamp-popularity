@@ -31,14 +31,9 @@
 			<?php echo h($user['Tag']['Average']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Sum'); ?></dt>
+		<dt><?php echo __('Title'); ?></dt>
 		<dd>
-			<?php echo h($user['Tag']['Sum']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Percent of Max'); ?></dt>
-		<dd>
-			<?php echo h(round($user['Tag']['Average'] / $highest['Tag']['Average'] * 100)) . '%'; ?>
+			<?php echo h($this->Title->get($user['Tag']['Average'])); ?>
 			&nbsp;
 		</dd>
 	</dl>
@@ -46,8 +41,9 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('List Users'), array('action' => 'rank')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'tags', 'action' => 'rank')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Scores'), array('controller' => 'scores', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Search'), array('controller' => 'pages', 'action' => 'display', 'home')); ?> </li>
 	</ul>
 </div>
 <?php if (!empty($tags)):?>
