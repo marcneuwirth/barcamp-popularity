@@ -65,13 +65,6 @@ class TagsController extends AppController {
 			),
 			'conditions' => array(
 				'User.id' => $id
-			),
-			'group' => array(
-				'User.id'
-			),
-			'order' => array(
-				'Average' => 'desc',
-				'Sum' => 'desc'
 			)
 		)));
 	}

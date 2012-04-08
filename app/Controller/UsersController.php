@@ -15,12 +15,9 @@ class UsersController extends AppController {
 
 	public function find($name = null) {
 		$this->User->recursive = 0;
-		if($this->request->is('post')){
-			if($this->request->data &&
-				isset($this->request->data['User']) && 
-				isset($this->request->data['User']['name'])
-			) {
-				$name = $this->request->data['User']['name'];
+		if($this->request->is('get') && $name == null){
+			if($this->request->query && isset($this->request->query['name'])) {
+				$name = $this->request->query['name'];
 			}
 			else {
 				$this->redirect(array('controller' => 'pages',  'action' => 'display', 'home'));
