@@ -14,27 +14,7 @@ class TitleHelper extends Helper {
 
 	public function get($average) {
 		$result = Cache::read('highest');
-		if (!$result) {
-			$this->loadModel('Tags');
-			$result = $this->Tag->find('first', array(
-				'fields' => array(
-					'Tag.Average'
-				),
-				'contain' => array(
-					'Tag' => array(
-						'Score'
-					)
-				),
-				'group' => array(
-					'User.id'
-				),
-				'order' => array(
-					'Tag.Average' => 'desc',
-					'Tag.Sum' => 'desc'
-				)
-			));
-			Cache::write('highest', $result);
-		}
+
 
 		$percent = round($average / $result['Tag']['Average'] * 100);
 
