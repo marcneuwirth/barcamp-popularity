@@ -80,6 +80,9 @@ p {
 #header{
 	padding: 10px 20px;
 }
+.splash {
+	margin: 10px;
+}
 #header h1 {
 	background: #003d4c;
 	font-family:'Miss Fajardose', 'Gill Sans','lucida grande', helvetica, arial, sans-serif;
@@ -110,6 +113,9 @@ p {
 	clear: both;
 	padding: 6px 10px;
 	text-align: right;
+}
+#footer a {
+	color: #eee;
 }
 
 /** containers **/

@@ -50,6 +50,8 @@ $cakeDescription = __d('cake_dev', 'Barcamp of Thrones');
 			<?php echo $this->fetch('content'); ?>
 		</div>
 		<div id="footer">
+			<?php echo $this->Html->link('Sean McGrath', array('controller' => 'tags', 'action' => 'rank_view', 469)); ?>
+			<?php echo $this->Html->link('Marc Neuwirth', array('controller' => 'tags', 'action' => 'rank_view', 524)); ?>
 		</div>
 	</div>
 	<?php echo $this->element('sql_dump'); ?>
