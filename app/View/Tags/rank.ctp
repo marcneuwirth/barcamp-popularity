@@ -9,7 +9,7 @@
 			<th><?php echo $this->Paginator->sort('Tag.Average', 'average');?></th>
 			<th><?php echo $this->Paginator->sort('Tag.Sum', 'sum');?></th>
 			
-			<th class="actions"><?php echo __('Actions');?></th>
+			<th class="actions"></th>
 	</tr>
 	<?php
 	foreach ($users as $user): ?>
@@ -44,7 +44,6 @@
 	</div>
 </div>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'tags', 'action' => 'rank')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Scores'), array('controller' => 'scores', 'action' => 'index')); ?> </li>

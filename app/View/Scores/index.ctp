@@ -3,7 +3,7 @@
 	<tr>
 			<th><?php echo $this->Paginator->sort('name');?></th>
 			<th><?php echo $this->Paginator->sort('count');?></th>
-			<th class="actions"><?php echo __('Actions');?></th>
+			<th class="actions"></th>
 
 	</tr>
 	<?php
@@ -34,7 +34,6 @@
 	</div>
 </div>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'tags', 'action' => 'rank')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Scores'), array('controller' => 'scores', 'action' => 'index')); ?> </li>
