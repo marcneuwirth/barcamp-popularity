@@ -22,5 +22,5 @@ App::uses('Debugger', 'Utility');
 ?>
 
 <?php echo $this->Form->create('User', array('type' => 'get', 'action' => 'find')); ?>
-<?php echo $this->Form->input('User.name', array('label' => false)); ?>
+<?php echo $this->Form->input('User.name', array('label' => false, 'AUTOCOMPLETE' => 'OFF')); ?>
 <?php echo $this->Form->end('Search'); ?>

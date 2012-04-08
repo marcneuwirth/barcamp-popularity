@@ -13,7 +13,7 @@
 		<td><?php echo h($score['Score']['name']); ?>&nbsp;</td>
 		<td><?php echo h($score['Score']['count']); ?>&nbsp;</td>
 		<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('action' => 'view', $score['Score']['name'])); ?>
+				<?php echo $this->Html->link(__('View'), array('controller' => 'tags', 'action' => 'view', $score['Score']['name'])); ?>
 		</td>
 
 	</tr>

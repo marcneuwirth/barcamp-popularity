@@ -84,4 +84,39 @@ class TagsController extends AppController {
 		)));
 	}
 
+	/**
+	 * view method
+	 * @param string $name
+	 * @return void
+	 */
+		public function view($name = null) {
+			$this->paginate = Set::merge($this->paginate, array(
+				'fields' => array(
+					'User.id',
+					'User.name',
+					'User.twitter',
+					'User.affiliation',
+					'User.website',
+					'Tag.Average',
+					'Tag.Sum'
+				),
+				'contain' => array(
+					'Tag' => array(
+						'Score'
+					)
+				),
+				'conditions' => array(
+					'Tag.name' => $name
+				),
+				'group' => array(
+					'Tag.user_id'
+				),
+				'order' => array(
+					'Tag.Average' => 'desc',
+					'Tag.Sum' => 'desc'
+				)
+			));
+			$this->set('users', $this->paginate());
+		}
+
 }
