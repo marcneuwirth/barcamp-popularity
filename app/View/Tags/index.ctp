@@ -14,7 +14,9 @@
 		<td>
 			<?php echo $this->Html->link($tag['User']['name'], array('controller' => 'users', 'action' => 'view', $tag['User']['id'])); ?>
 		</td>
-		<td><?php echo h($tag['Tag']['name']); ?>&nbsp;</td>
+		<td>
+			<?php echo $this->Html->link($tag['Score']['name'], array('controller' => 'scores', 'action' => 'view', $tag['Score']['name'])); ?>
+		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $tag['Tag']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $tag['Tag']['id'])); ?>
@@ -44,5 +46,7 @@
 		<li><?php echo $this->Html->link(__('New Tag'), array('action' => 'add')); ?></li>
 		<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New User'), array('controller' => 'users', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Scores'), array('controller' => 'scores', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Score'), array('controller' => 'scores', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

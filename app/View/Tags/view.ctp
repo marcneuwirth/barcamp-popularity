@@ -11,9 +11,9 @@
 			<?php echo $this->Html->link($tag['User']['name'], array('controller' => 'users', 'action' => 'view', $tag['User']['id'])); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Name'); ?></dt>
+		<dt><?php echo __('Score'); ?></dt>
 		<dd>
-			<?php echo h($tag['Tag']['name']); ?>
+			<?php echo $this->Html->link($tag['Score']['name'], array('controller' => 'scores', 'action' => 'view', $tag['Score']['name'])); ?>
 			&nbsp;
 		</dd>
 	</dl>
@@ -27,5 +27,7 @@
 		<li><?php echo $this->Html->link(__('New Tag'), array('action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New User'), array('controller' => 'users', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Scores'), array('controller' => 'scores', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Score'), array('controller' => 'scores', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

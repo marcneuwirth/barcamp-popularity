@@ -27,6 +27,13 @@ class Tag extends AppModel {
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
+		),
+		'Score' => array(
+			'className' => 'Score',
+			'foreignKey' => 'name',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
 		)
 	);
 }
