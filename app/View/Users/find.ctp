@@ -10,7 +10,7 @@
 	<?php
 	foreach ($users as $user): ?>
 	<tr>
-		<td><?php echo h($user['User']['name']); ?>&nbsp;</td>
+		<td><?php echo $user['User']['name'] ?>&nbsp;</td>
 		<td><?php echo $this->Html->link($user['User']['affiliation'], array('controller' => 'users', 'action' => 'find_affiliation', $user['User']['affiliation'])); ?>&nbsp;</td>
 		<td><?php echo $this->Html->link($user['User']['website'], $user['User']['website']); ?>&nbsp;</td>
 		<td><?php echo $this->Html->link($user['User']['twitter'], 'http://twitter.com/' . $user['User']['twitter']); ?>&nbsp;</td>

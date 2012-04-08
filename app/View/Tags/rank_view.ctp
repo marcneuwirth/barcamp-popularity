@@ -3,7 +3,7 @@
 	$image = strtolower($title) . '.jpg';
 ?>
 <div class="users view">
-<h2><?php  echo h($user['User']['name']) . ' - ' . h($title); ?></h2>
+<h2><?php  echo $user['User']['name'] . ' - ' . h($title); ?></h2>
 	<?php echo $this->Html->image($image); ?>
 	<dl>
 		<dt><?php echo __('Affiliation'); ?></dt>
