@@ -40,6 +40,34 @@ class UsersController extends AppController {
 	}
 
 	/**
+	 * Find Affiliation
+	 *
+	 * @return void
+	 */
+
+	public function find_affiliation($name = null) {
+		$this->User->recursive = 0;
+		$this->view = 'find';
+		if($this->request->is('get') && $name == null){
+			if($this->request->query && isset($this->request->query['name'])) {
+				$name = $this->request->query['name'];
+			}
+			else {
+				$this->redirect(array('controller' => 'pages',  'action' => 'display', 'home'));
+			}
+		}	
+
+		if($name){
+			$this->paginate = array(
+				'conditions' => array(
+					'User.affiliation' => "$name",
+				)
+			);
+		}
+		$this->set('users', $this->paginate());
+	}
+
+	/**
 	 * Find Ajax
 	 *
 	 * @param string $name

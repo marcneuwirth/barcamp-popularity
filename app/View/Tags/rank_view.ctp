@@ -13,7 +13,7 @@
 		</dd>
 		<dt><?php echo __('Affiliation'); ?></dt>
 		<dd>
-			<?php echo $this->Html->link($user['User']['affiliation'], array('controller' => 'users', 'action' => 'find', $user['User']['affiliation'])); ?>
+			<?php echo $this->Html->link($user['User']['affiliation'], array('controller' => 'users', 'action' => 'find_affiliation', $user['User']['affiliation'])); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Website'); ?></dt>
