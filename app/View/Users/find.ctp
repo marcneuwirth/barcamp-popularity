@@ -14,7 +14,7 @@
 	<tr>
 		<td><?php echo h($user['User']['id']); ?>&nbsp;</td>
 		<td><?php echo h($user['User']['name']); ?>&nbsp;</td>
-		<td><?php echo h($user['User']['affiliation']); ?>&nbsp;</td>
+		<td><?php echo $this->Html->link($user['User']['affiliation'], array('controller' => 'users', 'action' => 'find', $user['User']['affiliation'])); ?>&nbsp;</td>
 		<td><?php echo $this->Html->link($user['User']['website'], $user['User']['website']); ?>&nbsp;</td>
 		<td><?php echo $this->Html->link($user['User']['twitter'], 'http://twitter.com/' . $user['User']['twitter']); ?>&nbsp;</td>
 		<td class="actions">

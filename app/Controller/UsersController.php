@@ -13,32 +13,34 @@ class UsersController extends AppController {
 	 * @return void
 	 */
 
-	public function find() {
+	public function find($name = null) {
 		$this->User->recursive = 0;
 		if($this->request->is('post')){
 			if($this->request->data &&
 				isset($this->request->data['User']) && 
 				isset($this->request->data['User']['name'])
 			) {
-
 				$name = $this->request->data['User']['name'];
-				$this->paginate = array(
-					'conditions' => array(
-						array(
-							'OR' => array(
-								'User.name LIKE' => "%$name%",
-								'User.twitter LIKE' => "%$name%",
-								'User.affiliation LIKE' => "%$name%",
-								'User.website LIKE' => "%$name%"
-							)
-						)
-						
-					)
-				);
 			}
 			else {
 				$this->redirect(array('controller' => 'pages',  'action' => 'display', 'home'));
 			}
+		}	
+
+		if($name){
+			$this->paginate = array(
+				'conditions' => array(
+					array(
+						'OR' => array(
+							'User.name LIKE' => "%$name%",
+							'User.twitter LIKE' => "%$name%",
+							'User.affiliation LIKE' => "%$name%",
+							'User.website LIKE' => "%$name%"
+						)
+					)
+					
+				)
+			);
 		}
 		$this->set('users', $this->paginate());
 	}

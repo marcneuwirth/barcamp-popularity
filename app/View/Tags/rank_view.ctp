@@ -13,17 +13,17 @@
 		</dd>
 		<dt><?php echo __('Affiliation'); ?></dt>
 		<dd>
-			<?php echo h($user['User']['affiliation']); ?>
+			<?php echo $this->Html->link($user['User']['affiliation'], array('controller' => 'users', 'action' => 'find', $user['User']['affiliation'])); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Website'); ?></dt>
 		<dd>
-			<?php echo h($user['User']['website']); ?>
+			<?php echo $this->Html->link($user['User']['website'], $user['User']['website']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Twitter'); ?></dt>
 		<dd>
-			<?php echo h($user['User']['twitter']); ?>
+			<?php echo $this->Html->link($user['User']['twitter'], 'http://twitter.com/' . $user['User']['twitter']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Average'); ?></dt>
