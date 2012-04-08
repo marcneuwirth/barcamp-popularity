@@ -30,15 +30,12 @@ class UsersController extends AppController {
 		if($name){
 			$this->paginate = array(
 				'conditions' => array(
-					array(
-						'OR' => array(
-							'User.name LIKE' => "%$name%",
-							'User.twitter LIKE' => "%$name%",
-							'User.affiliation LIKE' => "%$name%",
-							'User.website LIKE' => "%$name%"
-						)
+					'OR' => array(
+						'User.name LIKE' => "%$name%",
+						'User.twitter LIKE' => "%$name%",
+						'User.affiliation LIKE' => "%$name%",
+						'User.website LIKE' => "%$name%"
 					)
-					
 				)
 			);
 		}
@@ -62,7 +59,12 @@ class UsersController extends AppController {
 				$this->User->recursive = 0;
 				$data = $this->User->find('all', array(
 					'conditions' => array(
-						'User.name LIKE' => "%$name%"
+						'OR' => array(
+							'User.name LIKE' => "%$name%",
+							'User.twitter LIKE' => "%$name%",
+							'User.affiliation LIKE' => "%$name%",
+							'User.website LIKE' => "%$name%"
+						)
 					)
 				));
 
