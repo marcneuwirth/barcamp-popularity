@@ -53,13 +53,13 @@ h1 {
 h2 {
 	background:#fff;
 	color: #e32;
-	font-family:'Gill Sans','lucida grande', helvetica, arial, sans-serif;
-	font-size: 190%;
+	font-family:'Miss Fajardose', 'Gill Sans','lucida grande', helvetica, arial, sans-serif;
+	font-size: 390%;
 }
 h3 {
 	color: #2c6877;
-	font-family:'Gill Sans','lucida grande', helvetica, arial, sans-serif;
-	font-size: 165%;
+	font-family:'Miss Fajardose', 'Gill Sans','lucida grande', helvetica, arial, sans-serif;
+	font-size: 350%;
 }
 h4 {
 	color: #993;
@@ -81,10 +81,12 @@ p {
 	padding: 10px 20px;
 }
 #header h1 {
-	line-height:20px;
-	background: #003d4c url('../img/cake.icon.png') no-repeat left;
+	background: #003d4c;
+	font-family:'Miss Fajardose', 'Gill Sans','lucida grande', helvetica, arial, sans-serif;
 	color: #fff;
 	padding: 0px 30px;
+	text-align: center;
+	font-size: 500%;
 }
 #header h1 a {
 	color: #fff;

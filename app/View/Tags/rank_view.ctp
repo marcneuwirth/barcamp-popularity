@@ -1,16 +1,11 @@
+<?php 
+	$title = $this->Title->get($user['Tag']['Average']);
+	$image = strtolower($title) . '.jpg';
+?>
 <div class="users view">
-<h2><?php  echo __('User');?></h2>
+<h2><?php  echo h($user['User']['name']) . ' - ' . h($title); ?></h2>
+	<?php echo $this->Html->image($image); ?>
 	<dl>
-		<dt><?php echo __('Id'); ?></dt>
-		<dd>
-			<?php echo h($user['User']['id']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Name'); ?></dt>
-		<dd>
-			<?php echo h($user['User']['name']); ?>
-			&nbsp;
-		</dd>
 		<dt><?php echo __('Affiliation'); ?></dt>
 		<dd>
 			<?php echo $this->Html->link($user['User']['affiliation'], array('controller' => 'users', 'action' => 'find_affiliation', $user['User']['affiliation'])); ?>
@@ -29,11 +24,6 @@
 		<dt><?php echo __('Average'); ?></dt>
 		<dd>
 			<?php echo h($user['Tag']['Average']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Title'); ?></dt>
-		<dd>
-			<?php echo h($this->Title->get($user['Tag']['Average'])); ?>
 			&nbsp;
 		</dd>
 	</dl>

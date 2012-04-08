@@ -15,10 +15,6 @@
  * @since         CakePHP(tm) v 0.10.0.1076
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-if (Configure::read('debug') == 0):
-	throw new NotFoundException();
-endif;
-App::uses('Debugger', 'Utility');
 ?>
 <div class="index">
 	<?php echo $this->Form->create('User', array('type' => 'get', 'action' => 'find')); ?>

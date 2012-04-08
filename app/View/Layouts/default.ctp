@@ -35,6 +35,8 @@ $cakeDescription = __d('cake_dev', 'Barcamp of Thrones');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
+	<link href='http://fonts.googleapis.com/css?family=Miss+Fajardose' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Arizonia' rel='stylesheet' type='text/css'>
 </head>
 <body>
 	<div id="container">
@@ -48,12 +50,6 @@ $cakeDescription = __d('cake_dev', 'Barcamp of Thrones');
 			<?php echo $this->fetch('content'); ?>
 		</div>
 		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false)
-				);
-			?>
 		</div>
 	</div>
 	<?php echo $this->element('sql_dump'); ?>

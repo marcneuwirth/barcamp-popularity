@@ -26,23 +26,23 @@ class TitleHelper extends Helper {
 		else if($percent >= 98){
 			$title = 'Queen';
 		}
-		else if($percent >= 90){
+		else if($percent >= 88){
 			$title = 'Hand of the King';
 		}
-		else if($percent >= 88){
+		else if($percent >= 87){
 			$title = 'Warden of the North';
 		}
 		else if($percent >= 86){
 			$title = 'Warden of the East';
 		}
-		else if($percent >= 84){
+		else if($percent >= 82){
 			$title = 'Warden of the West';
 		}
-		else if($percent >= 82){
+		else if($percent >= 80){
 			$title = 'Warden of the South';
 		}
 		else if($percent >= 76){
-			$title = 'Kingsguard';
+			$title = 'Kings Guard';
 		}
 		else if($percent >= 70){
 			$title = 'Lord Commander of the Nights Watch';
