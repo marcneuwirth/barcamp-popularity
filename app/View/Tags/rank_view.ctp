@@ -28,12 +28,12 @@
 		</dd>
 		<dt><?php echo __('Average'); ?></dt>
 		<dd>
-			<?php echo h($user[0]['Average']); ?>
+			<?php echo h($user['Tag']['Average']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Sum'); ?></dt>
 		<dd>
-			<?php echo h($user[0]['Sum']); ?>
+			<?php echo h($user['Tag']['Sum']); ?>
 			&nbsp;
 		</dd>
 	</dl>

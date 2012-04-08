@@ -2,12 +2,12 @@
 	<h2><?php echo __('Users');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('name');?></th>
-			<th><?php echo $this->Paginator->sort('affiliation');?></th>
-			<th><?php echo $this->Paginator->sort('website');?></th>
-			<th><?php echo $this->Paginator->sort('twitter');?></th>
-			<th><?php echo $this->Paginator->sort('Average');?></th>
-			<th><?php echo $this->Paginator->sort('Sum');?></th>
+			<th><?php echo $this->Paginator->sort('User.name', 'name');?></th>
+			<th><?php echo $this->Paginator->sort('User.affiliation', 'affiliation');?></th>
+			<th><?php echo $this->Paginator->sort('User.website', 'website');?></th>
+			<th><?php echo $this->Paginator->sort('User.twitter', 'twitter');?></th>
+			<th><?php echo $this->Paginator->sort('Tag.Average', 'average');?></th>
+			<th><?php echo $this->Paginator->sort('Tag.Sum', 'sum');?></th>
 			<th class="actions"><?php echo __('Actions');?></th>
 	</tr>
 	<?php
@@ -17,8 +17,8 @@
 		<td><?php echo $this->Html->link($user['User']['affiliation'], array('controller' => 'users', 'action' => 'find', $user['User']['affiliation'])); ?>&nbsp;</td>
 		<td><?php echo $this->Html->link($user['User']['website'], $user['User']['website']); ?>&nbsp;</td>
 		<td><?php echo $this->Html->link($user['User']['twitter'], 'http://twitter.com/' . $user['User']['twitter']); ?>&nbsp;</td>
-		<td><?php echo h($user[0]['Average']); ?>&nbsp;</td>
-		<td><?php echo h($user[0]['Sum']); ?>&nbsp;</td>
+		<td><?php echo h($user['Tag']['Average']); ?>&nbsp;</td>
+		<td><?php echo h($user['Tag']['Sum']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'rank_view', $user['User']['id'])); ?>
 		</td>

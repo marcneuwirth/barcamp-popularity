@@ -15,15 +15,15 @@ class TagsController extends AppController {
  */
 	public function rank() {
 		
-		$this->paginate = array(
+		$this->paginate = Set::merge($this->paginate, array(
 			'fields' => array(
 				'User.id',
 				'User.name',
 				'User.twitter',
 				'User.affiliation',
 				'User.website',
-				'avg(Score.count) as Average',
-				'sum(Score.count) as Sum',
+				'Tag.Average',
+				'Tag.Sum'
 			),
 			'contain' => array(
 				'Tag' => array(
@@ -34,11 +34,11 @@ class TagsController extends AppController {
 				'User.id'
 			),
 			'order' => array(
-				'Average' => 'desc',
-				'Sum' => 'desc'
+				'Tag.Average' => 'desc',
+				'Tag.Sum' => 'desc'
 			)
-		);
-		$this->set('users', $this->paginate('Tag', array(), array('Average')));
+		));
+		$this->set('users', $this->paginate());
 	}
 
 
@@ -55,8 +55,8 @@ class TagsController extends AppController {
 				'User.twitter',
 				'User.affiliation',
 				'User.website',
-				'avg(Score.count) as Average',
-				'sum(Score.count) as Sum',
+				'Tag.Average',
+				'Tag.Sum'
 			),
 			'contain' => array(
 				'Tag' => array(

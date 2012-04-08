@@ -15,6 +15,12 @@ class Tag extends AppModel {
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
+
+	public $virtualFields = array(
+		'Average' => 'avg(Score.count)',
+		'Sum' => 'sum(Score.count)',
+	);
+
 /**
  * belongsTo associations
  *
